@@ -5,7 +5,7 @@
 inxncgamma   <-   function(p, alpha, delta)
 {
    errortol <- 1e-12
-   maxitr <- 4000000
+   maxitr <- 50000
    d      <- delta
    k      <- ceiling(d / 2)
    a      <- alpha + k
@@ -53,7 +53,7 @@ inxncgamma   <-   function(p, alpha, delta)
             cdf    <- cdf + ppoid * gamad
             g      <- g + ppoid * hxd      
             remain <- remain - ppoid
-            if ((error <= errortol) | (i > maxitr)) convergiu <- TRUE
+            if ((remain <= errortol) | (i > maxitr)) convergiu <- TRUE
             i      <- i + 1
          }   
       } # achieved convergence

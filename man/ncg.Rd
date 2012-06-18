@@ -3,19 +3,12 @@
 \alias{ncg-package}
 \docType{package}
 \title{
-Computes the noncentral gamma functions: pdf, cdf, quantiles and noncontrality parameter.
+Computes the noncentral gamma functions: pdf, cdf, quantiles and noncentrality parameter.
 }
 \description{Computes the noncentral gamma functions: pdf, cdf, quantiles and noncentrality 
   parameter. This functions uses the mixture of incomplete gamma variable with Poisson weights. 
 }
 \details{
-\tabular{ll}{
-Package: \tab ncg\cr
-Type: \tab Package\cr
-Version: \tab 0.1.0\cr
-Date: \tab 2012-06-07\cr
-License: \tab GPL 2\cr
-}
 given x: vector of positive quantiles; alpha > 0 noncentral gamma parameter; and delta: noncentrality parameter\cr
 
 dgammanc(x, alpha, delta) - computes the pdf of the noncetral gamma function\cr

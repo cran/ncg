@@ -6,7 +6,7 @@
 dncgamma   <-   function(x, alpha, delta)
 {
    errortol <- 1e-12
-   maxitr <- 4000000
+   maxitr <- 50000
    if (delta == 0)
    {
       if (x < 0) fdp <- 0 else 
@@ -50,7 +50,7 @@ dncgamma   <-   function(x, alpha, delta)
            ppoid  <- ppoid * (k - i + 1) / (d / 2)
            g      <- g + ppoid * hxd      
            remain <- remain - ppoid
-           if ((error <= errortol) | (i > maxitr)) convergiu <- TRUE
+           if ((remain <= errortol) | (i > maxitr)) convergiu <- TRUE
            i      <- i + 1
          }   
      } # achieved convergence

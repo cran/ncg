@@ -5,17 +5,17 @@
 
 pncgamma   <-   function(x, alpha, delta)
 {
-   errortol <- 1e-12 
+   errortol <- 1e-12
    if (x < 0) x <- 0  
-   maxitr <- 4000000
+   maxitr <- 50000
    d      <- delta
    k      <- ceiling(d / 2)
    a      <- alpha + k
    gamac  <- pgamma(x, a)
    gamad  <- gamac
-   gxd    <- exp(a*log(x)-x-lgamma(a+1))
-   if (x == 0) gxc <- 0 else
-   gxc    <- gxd * a / x
+   gxd    <- exp(a * log(x) - x - lgamma(a+1))
+   if (x == 0) gxc <- 0 else 
+     gxc    <- gxd * a / x
    ppoic  <- dpois(k, d / 2)
    ppoid  <- ppoic
    remain <- 1 - ppoic
@@ -41,7 +41,7 @@ pncgamma   <-   function(x, alpha, delta)
         ppoid  <- ppoid * (k - i + 1) / (d / 2)
         cdf    <- cdf + ppoid * gamad      
         remain <- remain - ppoid
-        if ((error <= errortol) | (i > maxitr)) convergiu <- TRUE
+        if ((remain <= errortol) | (i > maxitr)) convergiu <- TRUE
         i      <- i + 1
       }   
    } # achieved convergence 

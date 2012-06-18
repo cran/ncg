@@ -4,8 +4,8 @@
 \title{
 Computes the cumulative distribution function of the noncentral gamma function
 }
-\description{computes the cumulative distribution function of the noncentral gamma 
-functions:
+\description{Computes the cumulative distribution function of the noncentral gamma 
+function:
 \deqn{I_x(\alpha, \delta) = P(X\le x)= \sum_{i=0}^\infty \frac{e^{-\delta/2}(\delta/2)^i}{i!} I_x(\alpha+i)}
 where \eqn{I_x(\alpha)} is the central incomplete gamma function, \eqn{\alpha>0}, \eqn{\delta>0}, \eqn{x\ge 0}.
 } 

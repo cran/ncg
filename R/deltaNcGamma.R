@@ -1,7 +1,7 @@
 indncgamma<- function(x, alpha, p)
 {
    errortol <- 1e-12
-   maxitr <- 4000000
+   maxitr <- 50000
    dn     <- d0(x,p,alpha)
    it     <-  1
    convnewton <- FALSE
@@ -46,7 +46,7 @@ indncgamma<- function(x, alpha, p)
             cdf    <- cdf + ppoid * gamad
             g      <- g + ppoid * hxd      
             remain <- remain - ppoid
-            if ((error <= errortol) | (i > maxitr)) convergiu <- TRUE
+            if ((remain <= errortol) | (i > maxitr)) convergiu <- TRUE
             i      <- i + 1
          }   
       } # achieved convergence
